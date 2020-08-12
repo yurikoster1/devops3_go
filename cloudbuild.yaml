@@ -25,7 +25,7 @@ steps:
     args:
       - 'run'
       - 'gcr.io/$PROJECT_ID/soma'
-      - 'go test'
+      - 'ls'
   - id: "run"
     name: 'gcr.io/$PROJECT_ID/soma'
 
