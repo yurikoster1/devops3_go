@@ -3,6 +3,10 @@
 substitutions:
   _IMAGE_VERSION: 1.0.0
 steps:
+  - id: "go_test"
+    name: "gcr.io/cloud-builders/go"
+    args: ["test","./..."]
+    env: ["GOPATH=."]
   - id: 'build'
     name: 'gcr.io/cloud-builders/docker'
     args:
@@ -16,16 +20,7 @@ steps:
       - '--target'
       - 'prod'
       - '.'
-  - id: "go_test"
-    name: "gcr.io/cloud-builders/go"
-    args: ["test","./..."]
-    env: ["GOPATH=."]
-  - id: "run"
-    name: "gcr.io/cloud-builders/go"
-    args: ["run","soma"]
-    env: ["GOPATH=."]
 
 images:
   - 'gcr.io/$PROJECT_ID/soma:latest'
   - 'gcr.io/$PROJECT_ID/soma:${_IMAGE_VERSION}'
-tags: ['cloud-builders-community']
