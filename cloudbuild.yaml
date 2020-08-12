@@ -17,11 +17,10 @@ steps:
       - 'base'
       - '.'
   - id: "test"
-    name: 'gcr.io/cloud-builders/docker'
+    name: 'gcr.io/devops-3-go/soma:1.0.0'
     args:
-      - 'run'
-      - 'gcr.io/$PROJECT_ID/soma'
-      - '/bin/sh'
+      - 'go'
+      - 'test'
   - id: "ps"
     name: 'gcr.io/cloud-builders/docker'
     args:
