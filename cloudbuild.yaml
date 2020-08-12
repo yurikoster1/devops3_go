@@ -13,6 +13,8 @@ steps:
       - 'gcr.io/$PROJECT_ID/soma:${_IMAGE_VERSION}'
       - '-f'
       - '.docker/Dockerfile'
+      - '--target'
+      - 'base'
       - '.'
   - id: "test"
     name: 'gcr.io/cloud-builders/docker'
