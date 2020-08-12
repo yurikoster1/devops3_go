@@ -21,7 +21,7 @@ steps:
     args:
       - 'run'
       - 'gcr.io/$PROJECT_ID/soma'
-      - 'ls'
+      - '/bin/sh'
   - id: "ps"
     name: 'gcr.io/cloud-builders/docker'
     args:
