@@ -16,6 +16,10 @@ steps:
       - '--target'
       - 'base'
       - '.'
+  - id: "ps"
+    name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'ps'
   - id: "test"
     name: 'gcr.io/cloud-builders/docker'
     args:
